@@ -1,0 +1,25 @@
+[Defines]
+  INF_VERSION    = 0x00010005
+  BASE_NAME      = IcmpPing
+  FILE_GUID      = ADE2F334-FD76-41A5-AD7B-5C58530E9568
+  MODULE_TYPE    = UEFI_APPLICATION
+  VERSION_STRING = 0.1
+  ENTRY_POINT    = UefiMain
+
+[Sources]
+  IcmpPing.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  NetworkPkg/NetworkPkg.dec
+  
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+
+[Protocols]
+  gEfiLoadedImageProtocolGuid
+  gEfiIp4ServiceBindingProtocolGuid
+  gEfiIp4ProtocolGuid
+  gEfiIp4Config2ProtocolGuid
